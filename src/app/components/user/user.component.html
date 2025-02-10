@@ -1,5 +1,5 @@
 <div class="user">
-  <button>
+  <button (click)="onSelectUser()">
     <img [src]="imagePath()" alt="user's profile picture" />
     <span> {{ user().name }} </span>
   </button>
