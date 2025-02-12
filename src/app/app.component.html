@@ -10,6 +10,6 @@
   </ul>
 
   @if (userSelected) {
-    <app-tasks [name]="userSelected.name" />
+    <app-tasks [userId]="userSelected.id" [name]="userSelected.name" />
   }
 </main>

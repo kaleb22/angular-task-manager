@@ -1,8 +1,16 @@
-<section id="">
+<section id="tasks">
   <header>
     <h2>{{ name() }} Task's</h2>
   </header>
   <menu>
     <button>Add Task</button>
   </menu>
+
+  <ul>
+    @for (task of userTasks; track task.id) {
+      <li>
+        <app-task [task]="task" />
+      </li>
+    }
+  </ul>
 </section>
