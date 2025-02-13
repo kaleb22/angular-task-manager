@@ -1,9 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 import { TaskComponent } from './task/task.component';
 import { DUMMY_TASKS } from '../../constants/dummy-tasks';
 import { NewTask, Task } from '../../interfaces/task.interface';
 import { NewTaskComponent } from './new-task/new-task.component';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-tasks',
@@ -15,11 +16,13 @@ export class TasksComponent {
   userId = input.required<string>();
   name = input.required<string>();
 
+  taskService = inject(TaskService);
+
   tasks = DUMMY_TASKS as Task[];
   showNewTask = false;
 
   get userTasks() {
-    return this.tasks.filter((task) => task.userId === this.userId());
+    return this.taskService.getUserTask(this.userId());
   }
 
   onClose() {
@@ -31,17 +34,10 @@ export class TasksComponent {
   }
 
   onCompleteTask(task: Task) {
-    const taskIndex = this.tasks.indexOf(task);
-    this.tasks.splice(taskIndex, 1);
+    this.taskService.delete(task);
   }
 
   onCreateNewTask(newTask: NewTask) {
-    this.tasks.push({
-      id: new Date().getTime().toString(),
-      userId: this.userId(),
-      title: newTask.title,
-      summary: newTask.summary,
-      dueDate: newTask.date,
-    });
+    this.taskService.add(newTask, this.userId());
   }
 }
