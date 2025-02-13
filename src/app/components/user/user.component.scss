@@ -16,13 +16,12 @@
     width: 100%;
     min-width: 10rem;
     text-align: left;
-  }
 
-  button:hover,
-  button:active,
-  .active {
-    background-color: #9965dd;
-    color: #150722;
+    &:hover,
+    &.active {
+      background-color: #9965dd;
+      color: #150722;
+    }
   }
 
   img {
