@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Task } from '../../../interfaces/task.interface';
 
 @Component({
@@ -9,4 +9,9 @@ import { Task } from '../../../interfaces/task.interface';
 })
 export class TaskComponent {
   task = input.required<Task>();
+  complete = output<Task>();
+
+  onComplete() {
+    this.complete.emit(this.task());
+  }
 }
