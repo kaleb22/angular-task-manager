@@ -16,7 +16,7 @@ export class TasksComponent {
   userId = input.required<string>();
   name = input.required<string>();
 
-  taskService = inject(TaskService);
+  private taskService = inject(TaskService);
 
   tasks = DUMMY_TASKS as Task[];
   showNewTask = false;
