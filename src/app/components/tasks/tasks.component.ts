@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 
 import { TaskComponent } from './task/task.component';
 import { DUMMY_TASKS } from '../../constants/dummy-tasks';
-import { Task } from '../../interfaces/task.interface';
+import { NewTask, Task } from '../../interfaces/task.interface';
 import { NewTaskComponent } from './new-task/new-task.component';
 
 @Component({
@@ -33,5 +33,15 @@ export class TasksComponent {
   onCompleteTask(task: Task) {
     const taskIndex = this.tasks.indexOf(task);
     this.tasks.splice(taskIndex, 1);
+  }
+
+  onCreateNewTask(newTask: NewTask) {
+    this.tasks.push({
+      id: new Date().getTime().toString(),
+      userId: this.userId(),
+      title: newTask.title,
+      summary: newTask.summary,
+      dueDate: newTask.date,
+    });
   }
 }
