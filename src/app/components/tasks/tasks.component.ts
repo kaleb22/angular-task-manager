@@ -32,12 +32,4 @@ export class TasksComponent {
   onAddTask() {
     this.showNewTask = true;
   }
-
-  onCompleteTask(task: Task) {
-    this.taskService.delete(task);
-  }
-
-  onCreateNewTask(newTask: NewTask) {
-    this.taskService.add(newTask, this.userId());
-  }
 }
