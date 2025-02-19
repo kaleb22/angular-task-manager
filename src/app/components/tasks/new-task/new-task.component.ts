@@ -1,12 +1,12 @@
 import { Component, inject, input, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { type NewTask } from '../../../interfaces/task.interface';
 import { TaskService } from '../../../services/task.service';
+import { ButtonComponent } from '../../button/button.component';
 
 @Component({
   selector: 'app-new-task',
-  imports: [FormsModule],
+  imports: [FormsModule, ButtonComponent],
   templateUrl: './new-task.component.html',
   styleUrl: './new-task.component.scss',
 })

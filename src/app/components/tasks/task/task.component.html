@@ -4,7 +4,10 @@
     <time>{{ task().dueDate | date }}</time>
     <p>{{ task().summary }}</p>
     <p class="actions">
-      <button (click)="onComplete()">Complete</button>
+      <button appButton (click)="onComplete()">
+        Complete
+        <span class="icon"> ✔️ </span>
+      </button>
     </p>
   </article>
 </app-card>

@@ -23,8 +23,14 @@
     </p>
 
     <p class="actions">
-      <button (click)="onClose()" type="button">Cancel</button>
-      <button type="submit">Create</button>
+      <button appButton (click)="onClose()" type="button">
+        Cancel
+        <span class="icon">❌</span>
+      </button>
+      <button appButton type="submit">
+        Create
+        <span class="icon">➕</span>
+      </button>
     </p>
   </form>
 </dialog>
