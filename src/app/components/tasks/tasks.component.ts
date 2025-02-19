@@ -5,10 +5,11 @@ import { DUMMY_TASKS } from '../../constants/dummy-tasks';
 import { NewTask, Task } from '../../interfaces/task.interface';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { TaskService } from '../../services/task.service';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-tasks',
-  imports: [TaskComponent, NewTaskComponent],
+  imports: [TaskComponent, NewTaskComponent, ButtonComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss',
 })
