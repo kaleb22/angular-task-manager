@@ -1,6 +1,6 @@
 <app-card>
   <button [class.active]="selected()" (click)="onSelectUser()">
-    <img [src]="imagePath()" alt="user's profile picture" />
+    <img [ngSrc]="imagePath()" alt="user's profile picture" width="32" height="32"/>
     <span> {{ user().name }} </span>
   </button>
 </app-card>
