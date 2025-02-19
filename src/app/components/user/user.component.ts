@@ -1,11 +1,12 @@
 import { Component, computed, input, output } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 
 import { User } from '../../interfaces/user.interface';
 import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-user',
-  imports: [CardComponent],
+  imports: [CardComponent, NgOptimizedImage],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss',
 })
