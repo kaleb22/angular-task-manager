@@ -10,6 +10,8 @@ This project was developed using Angular v19 with Standalone components.
 - Content projection with ng-content.
 - New Signals input, output functions.
 - Dynamic CSS styles with class binding.
+- Content projection using ng-content. Extended built in button element with custom component via attribute selector.
+- Images optimization with ngSrc directive.
 
 ## 👌 Live preview
 
